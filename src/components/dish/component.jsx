@@ -23,7 +23,7 @@ export const Dish = ({ name }) => {
   return (
     <div style={{backgroundColor: '#908e8d', padding: '20px'}}>
       <span>{ name }</span>
-      <Counter count={count} onRemoveClick={increaseNumberDish} onAddClick={reduceNumberDish}/>
+      <Counter count={count} onRemoveClick={reduceNumberDish} onAddClick={increaseNumberDish}/>
     </div>
   );
 };
