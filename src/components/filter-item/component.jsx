@@ -1,8 +1,8 @@
 
-export const  FilterItem = ({ name }) => {
+export const  FilterItem = ({ name, onClick }) => {
   return (
-    <div style={{backgroundColor: '#908e8d', padding: '20px'}}>
+    <button style={{backgroundColor: '#908e8d', margin: '5px'}} onClick={onClick}>
       { name }
-    </div>
+    </button>
   );
 };
