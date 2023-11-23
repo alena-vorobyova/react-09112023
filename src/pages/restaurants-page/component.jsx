@@ -7,10 +7,10 @@ export const RestaurantsPage = ({ restaurants }) => {
   const restaurantsName = restaurants.map(({ name }) => name);
   const [selectedRestaurant, setSelectedRestaurant] = useState(undefined);
 
-  const filteredRestaurants = restaurants.filter(
+  const filteredRestaurants = restaurants.find(
     ({name}) => name == selectedRestaurant
   );
-
+  
   return (
     <div>
       <Filter
