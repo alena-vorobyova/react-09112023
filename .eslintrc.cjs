@@ -16,5 +16,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/jsx-key': 0,
+    'react/prop-types': 0,
   },
 }

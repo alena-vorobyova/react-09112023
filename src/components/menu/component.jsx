@@ -1,5 +1,5 @@
 
-import { MenuItem } from "../menu-item/component";
+import { Dish } from "../dish/component";
 
 export const Menu = ({ menu }) => {
   return (
@@ -7,7 +7,7 @@ export const Menu = ({ menu }) => {
       <h4>Меню:</h4>
       {
         menu.map((item) => (
-          <MenuItem key={item.id} name={item.name} />
+          <Dish key={item.id} name={item.name} />
         ))
       }
     </div>
