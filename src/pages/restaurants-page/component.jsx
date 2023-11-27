@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 import { Filter } from "../../components/filter/component";
-import { Restaurants } from "../../components/restaurants/component";
+import { Restaurant } from "../../components/restaurant/component";
 
 export const RestaurantsPage = ({ restaurants }) => {
   const restaurantsName = restaurants.map(({ name }) => name);
   const [selectedRestaurant, setSelectedRestaurant] = useState(undefined);
 
-  const filteredRestaurants = restaurants.find(
+  const activeRestaurant = restaurants.find(
     ({name}) => name == selectedRestaurant
   );
   
@@ -20,8 +20,8 @@ export const RestaurantsPage = ({ restaurants }) => {
 
       {
         !selectedRestaurant ? null : (
-          <Restaurants
-            restaurants={filteredRestaurants}
+          <Restaurant
+            restaurant={activeRestaurant}
           />
         )
       }
