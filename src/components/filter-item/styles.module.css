@@ -1,0 +1,19 @@
+.Button {
+    position: relative;
+    margin: 0px 32px 0px 0px;
+    font-weight: 500;
+    color: rgb(128, 129, 133);
+    height: 100%;
+    cursor: pointer;
+    transition: color 0.2s ease 0s;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 0 0 8px 0;
+    background: transparent;
+    border: none;
+}

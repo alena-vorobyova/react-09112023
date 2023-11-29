@@ -3,6 +3,13 @@ import { useState } from "react";
 import { Filter } from "../../components/filter/component";
 import { Restaurant } from "../../components/restaurant/component";
 
+import styles from "./styles.module.css";
+import classNames from "classnames";
+
+const {
+  Container
+} = styles;
+
 export const RestaurantsPage = ({ restaurants }) => {
   const restaurantsName = restaurants.map(({ name }) => name);
   const [selectedRestaurant, setSelectedRestaurant] = useState(undefined);
@@ -12,7 +19,7 @@ export const RestaurantsPage = ({ restaurants }) => {
   );
   
   return (
-    <div>
+    <div className={classNames(Container)}>
       <Filter
         onRestaurantSelect={setSelectedRestaurant}
         name={restaurantsName}

@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Counter } from "../Counter/component";
+import { Counter } from "../counter/component";
+
+import styles from "./styles.module.css";
+import classNames from "classnames";
+
+const {
+  Container,
+} = styles;
 
 export const Dish = ({ name }) => {
   const [ count, setCount ] = useState(0);
@@ -21,7 +28,7 @@ export const Dish = ({ name }) => {
   }
 
   return (
-    <div style={{backgroundColor: '#908e8d', padding: '20px'}}>
+    <div className={classNames(Container)}>
       <span>{ name }</span>
       <Counter count={count} onRemoveClick={reduceNumberDish} onAddClick={increaseNumberDish}/>
     </div>

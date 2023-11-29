@@ -1,8 +1,14 @@
+import styles from "./styles.module.css";
+import classNames from "classnames";
+
+const {
+  Container,
+} = styles;
 
 export const ReviewItem = ({ text }) => {
 
   return (
-    <div style={{backgroundColor: '#908e8d', padding: '20px'}}>
+    <div className={classNames(Container)}>
       { text }
     </div>
   );
