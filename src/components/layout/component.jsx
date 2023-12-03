@@ -3,18 +3,21 @@ import { Footer } from "../footer/component";
 
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { useTheme } from "../theme/hooks";
 
-const { Container } = styles;
-
+const { Container, YellowTheme } = styles;
 
 export const  Layout = ({ children }) => {
+  const [ theme ] = useTheme();
+
   return (
-    <div className={classNames(Container)}>
-      <Header />
-      <main>
-        { children }
-      </main>
-      <Footer />
-    </div>
+      <div className={classNames(Container)}>
+        <Header />
+        <main className={classNames({[YellowTheme]: theme ==='yellow'} )}>
+          { children }
+        </main>
+        <Footer />
+      </div>
+
   );
 };

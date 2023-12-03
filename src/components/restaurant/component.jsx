@@ -16,6 +16,7 @@ const {
 
 export const Restaurant = ({restaurant}) => {
   const {id, name, menu, reviews} = restaurant;
+
   return (
     <div className={classNames(Container)}>
       <h3 className={classNames(Title)}>{name}</h3>
