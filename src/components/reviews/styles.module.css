@@ -1,0 +1,16 @@
+.Container {
+    padding: 32px;
+    background: rgb(248, 248, 248);
+}
+
+.Title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.ReviewStyle {
+    border-radius: 16px;
+    margin: 0 0 32px;
+}

@@ -1,7 +1,13 @@
+import styles from "./styles.module.css";
+import classNames from "classnames";
 
-export const  FilterItem = ({ name, onClick }) => {
+const {
+  Button,
+} = styles;
+
+export const  FilterItem = ({ name, onClick, className }) => {
   return (
-    <button style={{backgroundColor: '#908e8d', margin: '5px'}} onClick={onClick}>
+    <button className={classNames(Button, className)} onClick={onClick}>
       { name }
     </button>
   );
