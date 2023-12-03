@@ -5,9 +5,9 @@ const {
   Button,
 } = styles;
 
-export const  FilterItem = ({ name, onClick }) => {
+export const  FilterItem = ({ name, onClick, className }) => {
   return (
-    <button className={classNames(Button)} onClick={onClick}>
+    <button className={classNames(Button, className)} onClick={onClick}>
       { name }
     </button>
   );

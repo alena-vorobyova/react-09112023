@@ -6,3 +6,7 @@
     flex-direction: row;
     padding: 20px 0;
 }
+
+.FilterItemStyle {
+    margin: 0px 32px 0px 0px;
+}

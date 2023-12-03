@@ -9,9 +9,9 @@ const {
   Title
 } = styles;
 
-export const Menu = ({ menu }) => {
+export const Menu = ({ menu, className }) => {
   return (
-    <div className={classNames(Container)}>
+    <div className={classNames(Container, className)}>
       <h4 className={classNames(Title)}>Меню:</h4>
       {
         menu.map((item) => (

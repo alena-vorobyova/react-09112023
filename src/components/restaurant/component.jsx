@@ -9,6 +9,9 @@ import classNames from "classnames";
 const {
   Container,
   Title,
+  ReviewsStyle,
+  ReviewFormStyle,
+  MenuStyle
 } = styles;
 
 export const Restaurant = ({restaurant}) => {
@@ -17,11 +20,11 @@ export const Restaurant = ({restaurant}) => {
     <div className={classNames(Container)}>
       <h3 className={classNames(Title)}>{name}</h3>
 
-        <Menu menu={menu} />
+        <Menu menu={menu} className={MenuStyle}/>
 
-        <Reviews reviews={reviews} />
+        <Reviews reviews={reviews} className={ReviewsStyle}/>
 
-        <ReviewForm/>
+        <ReviewForm className={ReviewFormStyle}/>
 
 
     </div>

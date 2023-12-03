@@ -1,16 +1,11 @@
 import { useState } from "react";
 
 import { Filter } from "../../components/filter/component";
+import { Layout } from "../../components/layout/component";
+
 import { Restaurant } from "../../components/restaurant/component";
 
-import styles from "./styles.module.css";
-import classNames from "classnames";
-
-const {
-  Container
-} = styles;
-
-export const RestaurantsPage = ({ restaurants }) => {
+export const RestaurantsPage = ({ restaurants, className }) => {
   const restaurantsName = restaurants.map(({ name }) => name);
   const [selectedRestaurant, setSelectedRestaurant] = useState(undefined);
 
@@ -19,19 +14,21 @@ export const RestaurantsPage = ({ restaurants }) => {
   );
   
   return (
-    <div className={classNames(Container)}>
-      <Filter
-        onRestaurantSelect={setSelectedRestaurant}
-        name={restaurantsName}
-      />
+    <Layout>
+      <div className={className}>
+        <Filter
+          onRestaurantSelect={setSelectedRestaurant}
+          name={restaurantsName}
+        />
 
-      {
-        !selectedRestaurant ? null : (
-          <Restaurant
-            restaurant={activeRestaurant}
-          />
-        )
-      }
-    </div>
+        {
+          !selectedRestaurant ? null : (
+            <Restaurant
+              restaurant={activeRestaurant}
+            />
+          )
+        }
+      </div>
+    </Layout>
   );
 };

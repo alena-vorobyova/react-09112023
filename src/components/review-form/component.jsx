@@ -41,7 +41,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const ReviewForm = () => {
+export const ReviewForm = ({className}) => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
 
   const increment = () => {
@@ -61,7 +61,7 @@ export const ReviewForm = () => {
   };
 
   return (
-    <div className={classNames(Container)}>
+    <div className={classNames(Container, className)}>
       <h4 className={classNames(Title)}>Оставить отзыв</h4>
       <div className={classNames(Inner)}>
         <div className={classNames(InputWrap)}>

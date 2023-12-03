@@ -5,10 +5,10 @@ const {
   Container,
 } = styles;
 
-export const ReviewItem = ({ text }) => {
+export const ReviewItem = ({ text, className }) => {
 
   return (
-    <div className={classNames(Container)}>
+    <div className={classNames(Container, className)}>
       { text }
     </div>
   );
