@@ -9,7 +9,7 @@ const {
  } = styles;
 
 export const Header = ({ className }) => {
-  const [ theme, setTheme ] = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
   <div className={classNames(Container, className)}>

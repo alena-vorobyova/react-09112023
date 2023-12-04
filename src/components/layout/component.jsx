@@ -8,7 +8,7 @@ import { useTheme } from "../theme/hooks";
 const { Container, YellowTheme } = styles;
 
 export const  Layout = ({ children }) => {
-  const [ theme ] = useTheme();
+  const { theme } = useTheme();
 
   return (
       <div className={classNames(Container)}>
