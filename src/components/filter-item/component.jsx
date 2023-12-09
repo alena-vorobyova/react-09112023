@@ -6,6 +6,7 @@ const {
 } = styles;
 
 export const  FilterItem = ({ name, onClick, className }) => {
+  
   return (
     <button className={classNames(Button, className)} onClick={onClick}>
       { name }

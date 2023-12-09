@@ -8,7 +8,7 @@ const {
   Container,
 } = styles;
 
-export const Dish = ({ name }) => {
+export const Dish = ({ dish }) => {
   const [ count, setCount ] = useState(0);
 
   const increaseNumberDish = () => {
@@ -29,7 +29,7 @@ export const Dish = ({ name }) => {
 
   return (
     <div className={classNames(Container)}>
-      <span>{ name }</span>
+      <span>{ dish.name }</span>
       <Counter count={count} onRemoveClick={reduceNumberDish} onAddClick={increaseNumberDish}/>
     </div>
   );

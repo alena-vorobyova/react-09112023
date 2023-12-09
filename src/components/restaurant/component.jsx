@@ -1,6 +1,6 @@
 
-import { Menu } from "../menu/component";
-import { Reviews } from "../reviews/component";
+import { MenuContainer } from "../menu/container";
+import { ReviewsContainer } from "../reviews/container";
 import { ReviewForm } from "../review-form/component";
 
 import styles from "./styles.module.css";
@@ -21,9 +21,9 @@ export const Restaurant = ({restaurant}) => {
     <div className={classNames(Container)}>
       <h3 className={classNames(Title)}>{name}</h3>
 
-        <Menu menu={menu} className={MenuStyle}/>
+        <MenuContainer restaurantId={id} className={MenuStyle}/>
 
-        <Reviews reviews={reviews} className={ReviewsStyle}/>
+        <ReviewsContainer restaurantId={id} className={ReviewsStyle}/>
 
         <ReviewForm className={ReviewFormStyle}/>
 
