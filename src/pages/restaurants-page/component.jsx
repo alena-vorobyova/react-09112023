@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Layout } from "../../components/layout/component";
 import { RestaurantContainer } from "../../components/restaurant/container";
 import { ThemeProvider } from "../../components/theme/component";
