@@ -1,5 +1,5 @@
 
-import { ReviewItem } from "../review-item/component";
+import { ReviewItemContainer } from "../review-item/container";
 
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -10,13 +10,13 @@ const {
   ReviewStyle
 } = styles;
 
-export const Reviews = ({ reviews, className }) => {
+export const Reviews = ({ reviewIds, className }) => {
   return (
     <div className={classNames(Container, className)}>
       <h4 className={classNames(Title)}>Отзывы</h4>
       {
-        reviews.map((item) => (
-          <ReviewItem text={item.text} className={ReviewStyle}/>
+        reviewIds.map((id) => (
+          <ReviewItemContainer reviewIds={id} className={ReviewStyle}/>
         ))
       }
     </div>

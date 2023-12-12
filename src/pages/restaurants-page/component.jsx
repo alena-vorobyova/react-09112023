@@ -1,34 +1,24 @@
 import { useState } from "react";
-
-import { Filter } from "../../components/filter/component";
 import { Layout } from "../../components/layout/component";
-
-import { Restaurant } from "../../components/restaurant/component";
-
+import { RestaurantContainer } from "../../components/restaurant/container";
 import { ThemeProvider } from "../../components/theme/component";
+import { FilterContainer } from "../../components/filter/container";
 
-export const RestaurantsPage = ({ restaurants, className }) => {
-  const restaurantsName = restaurants.map(({ name }) => name);
-  const [selectedRestaurant, setSelectedRestaurant] = useState(undefined);
+export const RestaurantsPage = ({ className }) => {
+  const [activedRestaurantId, setActivedRestaurantId] = useState(undefined);
 
-  const activeRestaurant = restaurants.find(
-    ({name}) => name == selectedRestaurant
-  );
-
-  
   return (
     <ThemeProvider>
-      <Layout>
+      <Layout>  
         <div className={className}>
-          <Filter
-            onRestaurantSelect={setSelectedRestaurant}
-            name={restaurantsName}
+          <FilterContainer
+            onFilterItemClick={setActivedRestaurantId}
           />
 
           {
-            !selectedRestaurant ? null : (
-              <Restaurant
-                restaurant={activeRestaurant}
+            !activedRestaurantId ? null : (
+              <RestaurantContainer
+                restaurantId={activedRestaurantId}
               />
             )
           }

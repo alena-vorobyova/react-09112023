@@ -1,4 +1,4 @@
-import { FilterItem } from "../filter-item/component";
+import { RestaurantFilterItemContainer } from "../restaurant-filter-item/container";
 
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -8,12 +8,11 @@ const {
   FilterItemStyle
 } = styles;
 
-export const Filter = ({ name, onRestaurantSelect }) => {
-
+export const Filter = ({ restaurantIds, onFilterItemClick }) => {
   return (
     <div className={classNames(Container)}>
-      {name.map((name) => (
-        <FilterItem name={name} className={FilterItemStyle} onClick={() => onRestaurantSelect(name)}/>
+      {restaurantIds.map((id) => (
+        <RestaurantFilterItemContainer key={id} restaurantId={id} onClick={() => onFilterItemClick(id)} className={FilterItemStyle}/>
       ))}
     </div>
   );

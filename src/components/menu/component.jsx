@@ -1,5 +1,5 @@
 
-import { Dish } from "../dish/component";
+import { DishContainer } from "../dish/container";
 
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -9,13 +9,13 @@ const {
   Title
 } = styles;
 
-export const Menu = ({ menu, className }) => {
+export const Menu = ({ dishIds, className }) => {
   return (
     <div className={classNames(Container, className)}>
       <h4 className={classNames(Title)}>Меню:</h4>
       {
-        menu.map((item) => (
-          <Dish key={item.id} name={item.name} />
+        dishIds.map((id) => (
+          <DishContainer key={id} dishId={id} />
         ))
       }
     </div>
