@@ -1,26 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { getReviews } from "./thunks/get-reviews";
 import { REQUEST_STATUSES } from "../../../../constants/request-statuses";
 
+const entityAdapter = createEntityAdapter();
+
 export const reviewSlice = createSlice({
   name: "review",
-  initialState: {
-    entities: {},
-    ids: [],
-    status: REQUEST_STATUSES.idle,
-  },
+  initialState: entityAdapter.getInitialState({ status: "idle" }),
   extraReducers: (builder) =>
     builder
       .addCase(getReviews.pending, (state) => {
         state.status = REQUEST_STATUSES.pending;
       })
       .addCase(getReviews.fulfilled, (state, { payload }) => {
-        state.entities = payload.reduce((acc, review) => {
-          acc[review.id] = review;
-
-          return acc;
-        }, {});
-        state.ids = payload.map(({ id }) => id);
+        entityAdapter.upsertMany(state, payload);
         state.status = REQUEST_STATUSES.fulfilled;
       })
       .addCase(getReviews.rejected, (state) => {

@@ -1,5 +1,6 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { getRestaurants } from "./thunks/get-restaurants";
+import { REQUEST_STATUSES } from "../../../../constants/request-statuses";
 
 const entityAdapter = createEntityAdapter();
 
@@ -9,13 +10,13 @@ export const restaurantSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(getRestaurants.pending, (state) => {
-        state.status = "pending";
+        state.status = REQUEST_STATUSES.pending;
       })
       .addCase(getRestaurants.fulfilled, (state, { payload }) => {
         entityAdapter.setAll(state, payload);
-        state.status = "fulfilled";
+        state.status = REQUEST_STATUSES.fulfilled;
       })
       .addCase(getRestaurants.rejected, (state) => {
-        state.status = "rejected";
+        state.status = REQUEST_STATUSES.rejected;
       }),
 });
