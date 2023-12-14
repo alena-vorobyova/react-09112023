@@ -7,6 +7,10 @@ const {
 
 export const ReviewItem = ({ review, className }) => {
 
+  if (!review) {
+    return null;
+  }
+
   return (
     <div className={classNames(Container, className)}>
       { review.text }

@@ -11,6 +11,10 @@ const {
 export const Dish = ({ dish }) => {
   const [ count, setCount ] = useState(0);
 
+  if (!dish) {
+    return null;
+  }
+
   const increaseNumberDish = () => {
     if (count === 5) {
       return null;
