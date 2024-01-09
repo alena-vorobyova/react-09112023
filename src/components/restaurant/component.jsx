@@ -20,7 +20,6 @@ export const Restaurant = ({restaurant}) => {
   return (
     <div className={classNames(Container)}>
       <h3 className={classNames(Title)}>{name}</h3>
-
         <MenuContainer restaurantId={id} className={MenuStyle}/>
 
         <ReviewsContainer restaurantId={id} className={ReviewsStyle}/>
